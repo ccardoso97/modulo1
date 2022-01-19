@@ -3,8 +3,8 @@ const prompt = require("prompt-sync")();
 console.log(` 
 Um fiscal da vigilância sanitária teve um grande problema,
 algumas pessoas de sua cidade estavam ficando doentes 
-pelo consumo de carnes estragadas,
-afim de ficalizar os açougues da região,
+pelo consumo de carnes estragadas.
+Afim de ficalizar os açougues da região,
 o fiscal estabeleceu um questionário
 com cinco critérios avaliativos 
 pensados para classificar os estabelecimentos.
