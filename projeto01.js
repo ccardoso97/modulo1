@@ -13,7 +13,7 @@ o estalecimento é: Ótimo, Bom, Regular, Ruim ou Péssimo.
 Responda às seguintes perguntas para ser avaliado:
 `);
 
-let higienePessoal = +prompt('Todos os funcioários estão com as mãos limpas? ');
+let higienePessoal = +prompt('Todos os funcionários estão com as mãos limpas? ');
 let limpezaDaLoja = +prompt('As ferramentas e o ambiente foram higienizados? ');
 let ferramentas = +prompt('Todas as ferramentas estão afiadas? ');
 let seguranca = +prompt('Os uniformes, toucas e luvas estão dentro dos padrões? ');
