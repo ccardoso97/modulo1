@@ -1,0 +1,23 @@
+{
+  "name": "modulo1",
+  "version": "1.0.0",
+  "description": "Modulo 1",
+  "main": "codelab1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ccardoso97/modulo1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ccardoso97/modulo1/issues"
+  },
+  "homepage": "https://github.com/ccardoso97/modulo1#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
