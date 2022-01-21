@@ -23,11 +23,11 @@ let seguranca = prompt('Os uniformes, toucas e luvas estão dentro dos padrões?
 let produtos = prompt('Os produtos estão todos dentro da validade e armazenados de maneira correta? ').toLowerCase();
 
 let respostas = 0 
-if (higienePessoal == 'sim'){respostas = respostas + 1};
-if (limpezaDaLoja == 'sim'){respostas = respostas + 1};
-if (ferramentas == 'sim'){respostas = respostas + 1};
-if (seguranca == 'sim'){respostas = respostas + 1};
-if (produtos == 'sim'){respostas = respostas + 1};
+if (higienePessoal == 'sim'){respostas++};
+if (limpezaDaLoja == 'sim'){respostas++};
+if (ferramentas == 'sim'){respostas++};
+if (seguranca == 'sim'){respostas++};
+if (produtos == 'sim'){respostas++};
 
 console.log(`A quantidade de respostas 'Sim' foi: ${respostas}.`);
 if (respostas == 0){
@@ -41,7 +41,7 @@ if (respostas == 0){
     apenas algumas correções!`);
 } else if (respostas == 5){
     console.log(`Ótimo! O ${estabelecimento} é um exemplo entre os açougues e receberá um certificado 
-    de honra ao mérito!`);
+de honra ao mérito!`);
 } console.log ();
 console.log(`Fim da avaliação de ${estabelecimento}.`);
 console.log();
