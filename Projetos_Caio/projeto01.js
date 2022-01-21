@@ -18,7 +18,7 @@ let estabelecimento = prompt(`Qual o nome do açougue? `);
 console.log ();
 let higienePessoal = prompt(`Todos os funcionários de ${estabelecimento} estão com as mãos limpas? `).toLowerCase();
 let limpezaDaLoja = prompt('O chão, balcão e geladeiras foram higienizados corretamente? ').toLowerCase();
-let ferramentas = prompt('Todas as ferramentas estão afiada? ').toLowerCase();
+let ferramentas = prompt('Todas as ferramentas estão afiadas? ').toLowerCase();
 let seguranca = prompt('Os uniformes, toucas e luvas estão dentro dos padrões? ').toLowerCase();
 let produtos = prompt('Os produtos estão todos dentro da validade e armazenados de maneira correta? ').toLowerCase();
 
