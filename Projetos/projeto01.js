@@ -44,3 +44,5 @@ if (respostas == 0){
     de honra ao mérito!`);
 } console.log ()
 console.log(`Fim da avaliação de ${estabelecimento}.`);
+console.log()
+
