@@ -42,7 +42,6 @@ if (respostas == 0){
 } else if (respostas == 5){
     console.log(`Ótimo! O ${estabelecimento} é um exemplo entre os açougues e receberá um certificado 
     de honra ao mérito!`);
-} console.log ()
+} console.log ();
 console.log(`Fim da avaliação de ${estabelecimento}.`);
-console.log()
-
+console.log();
