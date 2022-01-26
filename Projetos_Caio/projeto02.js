@@ -8,15 +8,14 @@ while (repetir == "sim") {
   let vitoriaUsuario = 0;
   let empate = 0;
   let nome = prompt(`Seja bem vindo! Qual o seu nome? `);
-  let rodadasUsuario = +prompt(`
-Olá, ${nome}, quantas rodadas você deseja jogar? `);
+  let rodadasUsuario = +prompt(`Olá, ${nome}, quantas rodadas você deseja jogar? `);
   while (rodadasUsuario == 0) {
     rodadasUsuario = +prompt(
       `Por favor, ${nome}, informe um valor maior que 0: `
     );
   }
-  for (rodadas = 0; rodadas < rodadasUsuario; rodadas++) {
-    console.log("--------------------------------------------------------");
+  for (rodadas = 1; rodadas <= rodadasUsuario; rodadas++) {
+    console.log("---------------------------------------------------");
     let usuario = prompt(
       "Escolha entre: Pedra, Papel ou Tesoura: "
     ).toUpperCase();
@@ -32,7 +31,7 @@ Olá, ${nome}, quantas rodadas você deseja jogar? `);
         "Escolha entre: Pedra, Papel ou Tesoura: "
       ).toUpperCase();
     }
-    console.log("--------------------------------------------------------");
+    console.log(`---------------------${rodadas}ª rodada---------------------`);
     console.log(`${nome} selecionou: ${usuario}.`);
     console.log(`O computador selecionou: ${elementos[computador]}.`);
 
@@ -49,7 +48,7 @@ Olá, ${nome}, quantas rodadas você deseja jogar? `);
       vitoriaUsuario++;
     }
     if (usuario == "PAPEL" && computador == 1) {
-      console.log("O jogo empatou!");
+        console.log("O jogo empatou!");
       empate++;
     }
     if (usuario == "PAPEL" && computador == 0) {
@@ -61,7 +60,7 @@ Olá, ${nome}, quantas rodadas você deseja jogar? `);
       vitoriaComputador++;
     }
     if (usuario == "TESOURA" && computador == 2) {
-      console.log("O jogo empatou!");
+        console.log("O jogo empatou!");
       empate++;
     }
     if (usuario == "TESOURA" && computador == 1) {
@@ -73,35 +72,34 @@ Olá, ${nome}, quantas rodadas você deseja jogar? `);
       vitoriaComputador++;
     }
   }
-  console.log("--------------------------------------------------------");
+  console.log("--------------------Resultado---------------------");
 
-  console.log(` 
-            |Aqui estão os resultados: 
-            |Empates: ${empate}
-            |Vitórias de ${nome}: ${vitoriaUsuario}
-            |Vitórias do computador: ${vitoriaComputador}
+  console.log(`  
+              |Empates: ${empate}
+              |Vitórias de ${nome}: ${vitoriaUsuario}
+              |Vitórias do computador: ${vitoriaComputador}
             `);
-  console.log("--------------------------------------------------------");
+  console.log("---------------------------------------------------");
   if (vitoriaUsuario > vitoriaComputador) {
     console.log(`
-            Parabéns, ${nome}!!
-            Você foi o campeão!
+              Parabéns, ${nome}!!
+              Você foi o campeão!
                     `);
   } else if (vitoriaComputador > vitoriaUsuario) {
     console.log(`
-            Dessa vez não deu, ${nome}! 
-            O computador foi campeão!
+              Dessa vez não deu, ${nome}! 
+              O computador foi campeão!
                     `);
   } else if (vitoriaUsuario == 0 && vitoriaComputador == 0) {
     console.log(`
-            O jogo terminou empatado!
+              O jogo terminou empatado!
                     `);
   } else if (vitoriaUsuario == vitoriaComputador) {
     console.log(`
-            O jogo terminou empatado!
+              O jogo terminou empatado!
                     `);
   };
-  console.log("--------------------------------------------------------");
+  console.log("---------------------------------------------------");
   repetir = prompt(`${nome}, deseja jogar novamente? `).toLowerCase();
   console.log();
   while (repetir !== "sim" && repetir !== "nao") {
