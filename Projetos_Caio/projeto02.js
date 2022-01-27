@@ -3,16 +3,22 @@ const prompt = require("prompt-sync")();
 var repetir = "sim";
 while (repetir == "sim") {
   console.clear();
+  var regex = /[1-9]/;
   let elementos = ["PEDRA", "PAPEL", "TESOURA"];
   let vitoriaComputador = 0;
   let vitoriaUsuario = 0;
   let empate = 0;
   let nome = prompt(`Seja bem vindo! Qual o seu nome? `);
-  let rodadasUsuario = +prompt(`Olá, ${nome}, quantas rodadas você deseja jogar? `);
-  while (rodadasUsuario == 0) {
+  let rodadasUsuario = +prompt(
+    `Olá, ${nome}, quantas rodadas você deseja jogar? `
+  );
+  while (rodadasUsuario <= 0) {
     rodadasUsuario = +prompt(
       `Por favor, ${nome}, informe um valor maior que 0: `
     );
+  }
+  while (!regex.test(rodadasUsuario)) {
+    rodadasUsuario = +prompt(`Por favor, ${nome}, digite um número: `);
   }
   for (rodadas = 1; rodadas <= rodadasUsuario; rodadas++) {
     console.log("---------------------------------------------------");
@@ -48,7 +54,7 @@ while (repetir == "sim") {
       vitoriaUsuario++;
     }
     if (usuario == "PAPEL" && computador == 1) {
-        console.log("O jogo empatou!");
+      console.log("O jogo empatou!");
       empate++;
     }
     if (usuario == "PAPEL" && computador == 0) {
@@ -60,7 +66,7 @@ while (repetir == "sim") {
       vitoriaComputador++;
     }
     if (usuario == "TESOURA" && computador == 2) {
-        console.log("O jogo empatou!");
+      console.log("O jogo empatou!");
       empate++;
     }
     if (usuario == "TESOURA" && computador == 1) {
@@ -98,7 +104,7 @@ while (repetir == "sim") {
     console.log(`
               O jogo terminou empatado!
                     `);
-  };
+  }
   console.log("---------------------------------------------------");
   repetir = prompt(`${nome}, deseja jogar novamente? `).toLowerCase();
   console.log();
@@ -110,5 +116,5 @@ while (repetir == "sim") {
     console.log(`
             | Obrigado por jogar, ${nome}! |
                 `);
-  };
-};
+  }
+}
