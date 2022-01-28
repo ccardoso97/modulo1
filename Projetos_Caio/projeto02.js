@@ -16,10 +16,10 @@ while (repetir == "sim") {
     rodadasUsuario = +prompt(
       `Por favor, ${nome}, informe um valor maior que 0: `
     );
-  }
+  };
   while (!regex.test(rodadasUsuario)) {
     rodadasUsuario = +prompt(`Por favor, ${nome}, digite um número: `);
-  }
+  };
   for (rodadas = 1; rodadas <= rodadasUsuario; rodadas++) {
     console.log("---------------------------------------------------");
     let usuario = prompt(
@@ -36,7 +36,7 @@ while (repetir == "sim") {
       usuario = prompt(
         "Escolha entre: Pedra, Papel ou Tesoura: "
       ).toUpperCase();
-    }
+    };
     console.log(`---------------------${rodadas}ª rodada---------------------`);
     console.log(`${nome} selecionou: ${usuario}.`);
     console.log(`O computador selecionou: ${elementos[computador]}.`);
@@ -72,12 +72,12 @@ while (repetir == "sim") {
     if (usuario == "TESOURA" && computador == 1) {
       console.log(`${nome} venceu!`);
       vitoriaUsuario++;
-    }
+    } 
     if (usuario == "TESOURA" && computador == 0) {
       console.log("O computador venceu!");
       vitoriaComputador++;
-    }
-  }
+    };
+  };
   console.log("--------------------Resultado---------------------");
 
   console.log(`  
@@ -104,7 +104,7 @@ while (repetir == "sim") {
     console.log(`
               O jogo terminou empatado!
                     `);
-  }
+  };
   console.log("---------------------------------------------------");
   repetir = prompt(`${nome}, deseja jogar novamente? `).toLowerCase();
   console.log();
@@ -116,5 +116,5 @@ while (repetir == "sim") {
     console.log(`
             | Obrigado por jogar, ${nome}! |
                 `);
-  }
-}
+  };
+};
