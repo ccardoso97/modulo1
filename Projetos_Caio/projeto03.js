@@ -30,7 +30,7 @@ while (etinia !== 'branca' && etinia !== 'preta'){
     console.log(`Por favor ${nome}, escolha entre as duas opções disponíveis!`)
     etinia = prompt(`Qual é a cor da sua pele? (Escolha entre "Preta" ou "Branca") `).toLowerCase();
 }
-let sexo = prompt(`Qual é o seu sexo? (Homem ou mulher)`).toLowerCase();
+let sexo = prompt(`Qual é o seu sexo? (Homem ou mulher) `).toLowerCase();
 while (sexo !== 'homem' && sexo !== 'mulher'){
     console.log(`Por favor ${nome}, escolha entre as duas opções disponíveis!`)
     sexo = prompt(`Qual é o seu sexo? (Homem ou mulher) `).toLowerCase();
@@ -38,7 +38,7 @@ while (sexo !== 'homem' && sexo !== 'mulher'){
 let anoInicio = nascimento + 6
 console.log(`Olá, ${nome}, você é um(a) ${sexo}, de pele ${etinia}. Sua jornada se inicia no ano ${anoInicio}! Bom jogo!`);
 console.log()
-console.log(`---------------------------- ${anoInicio} ------------------------------`)
+console.log(`---------------------- O ano é ${anoInicio} ------------------------`)
 
 
 
