@@ -1,43 +1,26 @@
 const prompt = require("prompt-sync")();
-//1
 
-// console.log('O primeiro programa a gente nunca esquece!')
-
-
-//2 
-
-// console.log(`
-// Nome: Caio Luiz Cardoso Oliveira
-// Endereço: Rua Santa Clara, 95, Costa Carvalho
-// CEP: 36070-120
-// Tel.: 32 9 91394691
-// `);
-
-//3
-
-// console.log(`
-// Eu tinha uma galinha; 
-// Que se chamava Marylou;
-// Um dia fiquei com fome;
-// E papei a Marylou; 
-// Marylou, Marylou;
-// Tinha cara de babaca;
-// Marylou, Marylou;
-// Botava ovo pela cloaca...
-// `);
-
-
-let objeto = {
-    nome: 'Gabriel',
-    idade: 20,
-    cidade:'Londrina',
-    mudaCidade: function(nova){
-        this.cidade = nova
+let status = {
+    esc: 0,
+    cur: 0,
+    empr: 0,
+    mudaEsc: function (esc1) {
+      this.esc = esc1;
     },
-    bio: function(){
-        console.log(`O nome é ${this.nome}, tem ${this.idade} anos e mora em ${this.cidade}`);
-    }
-}
-objeto.bio();
-objeto.mudaCidade("Juiz de Fora")
-objeto.bio();
+    mudaCur: function (cur1) {
+      this.cur = cur1;
+    },
+    mudaEmpr: function (empr1) {
+      this.empr = empr1;
+    },
+    statusfinal: function () {
+      console.log(`
+  Seu status de Escolaridade é ${this.esc}/10
+  Seu status de Cursos Complementares é ${this.cur}/10
+  Seu status de Empregabilidade é ${this.empr}/10`);
+    },
+  };
+  status.mudaEsc(3)
+  status.mudaCur(1)
+  status.mudaEmpr(status.cur + status.esc)
+  status.statusfinal()
