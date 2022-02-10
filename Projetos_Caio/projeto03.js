@@ -43,13 +43,13 @@ while (!regex.test(nome)) {
   nome = prompt(`Qual o nome do seu personagem? `);
 }
 let nascimento = +prompt(`${nome}, em que ano você nasceu? `);
-while (!regex2.test(nascimento) || nascimento < 1980 || nascimento >= 2022) {
+while (!regex2.test(nascimento) || nascimento < 1980 || nascimento >= 1999) {
   console.log(`Digite uma data válida! (Este jogo simulas os dias atuais,
-digite uma data maior ou igual à 1980 e menor que 2022)`);
+digite uma data entre 1980 e 2000)`);
   nascimento = +prompt(`${nome}, em que ano você nasceu? `);
 }
 let etinia = prompt(
-  `Qual é a cor da sua pele? (Preta ou Branca) `
+  `A cor de sua pele é preta ou branca? `
 ).toLowerCase();
 while (etinia !== "branca" && etinia !== "preta") {
   console.log(`Por favor ${nome}, escolha entre as duas opções disponíveis!`);
@@ -57,12 +57,12 @@ while (etinia !== "branca" && etinia !== "preta") {
     `Qual é a cor da sua pele? (Escolha entre "Preta" ou "Branca") `
   ).toLowerCase();
 }
-let sexo = prompt(`Qual é o seu sexo? (Homem ou mulher) `).toLowerCase();
+let sexo = prompt(`Você é homem ou mulher? `).toLowerCase();
 while (sexo !== "homem" && sexo !== "mulher") {
   console.log(`Por favor ${nome}, escolha entre as duas opções disponíveis!`);
   sexo = prompt(`Qual é o seu sexo? (Homem ou mulher) `).toLowerCase();
 }
-let idade = nascimento + 15;
+let idade = 2022 - nascimento;
 console.log();
 console.log(
   `--------------------- Você tem ${idade} anos de idade ---------------------`
@@ -131,8 +131,8 @@ function aleatoriedadesEstudos() {
     Sua família teve uma emergência financeira e você interrompeu 
     os estudos para trabalhar!
     -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=`);
-    status.mudaEsc(-5);
-    status.statusfinal();
+      status.mudaEsc(-5);
+      status.statusfinal();
     }
   }
   if (sexo == "homem" && etinia == "preta") {
@@ -142,8 +142,8 @@ function aleatoriedadesEstudos() {
     Sua família teve uma emergência financeira e você interrompeu 
     os estudos para trabalhar!
     -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=`);
-    status.mudaEsc(-5);
-    status.statusfinal();
+      status.mudaEsc(-5);
+      status.statusfinal();
     }
   }
   if (sexo == "mulher" && etinia == "branca") {
@@ -153,8 +153,8 @@ function aleatoriedadesEstudos() {
     Sua família teve uma emergência financeira e você interrompeu 
     os estudos para trabalhar!
     -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=`);
-    status.mudaEsc(-5);
-    status.statusfinal();
+      status.mudaEsc(-5);
+      status.statusfinal();
     }
   }
   if (sexo == "mulher" && etinia == "preta") {
@@ -164,8 +164,8 @@ function aleatoriedadesEstudos() {
     Sua família teve uma emergência financeira e você interrompeu 
     os estudos para trabalhar!
     -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=`);
-    status.mudaEsc(-5);
-    status.statusfinal();
+      status.mudaEsc(-5);
+      status.statusfinal();
     }
   }
 }
