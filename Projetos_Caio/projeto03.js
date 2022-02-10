@@ -3,9 +3,6 @@ console.clear();
 var regex2 = /[1-9]/;
 var regex =
   /[a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, x, z, y, w, ç]/;
-let escolaridadeInicial = 0;
-let cursosInicial = 0;
-let empregabilidadeInicial = 0;
 let escolaridade = [
   "Ensino médio completo",
   "Ensino médio incompleto",
@@ -13,6 +10,16 @@ let escolaridade = [
 ];
 let cursos = ["Inglês", "Informática", "CNH", "Não possui"];
 let emprego = ["Formal", "Informal"];
+let eventoAleatorioEstudos = [
+  `Sua família teve uma emergência financeira e você interrompeu os estudos para trabalhar`,
+];
+let eventoAleatorioCursos = [
+  `Devido a seu trabalho em tempo integral, você não põde fazer um curso complementar.`,
+];
+let eventoAleatorioEmprego = [
+  `Você não possui muitas conexões no mercado de trabalho, o que criou um empecilho
+para conseguir um trabalho formal.`,
+];
 console.log(`Olá, seja bem-vindo ao RPG Sociológico!
 Neste jogo, TODAS as escolhas têm consequências 
 e impactam no final! Por se tratar de um jogo no estilo RPG,
@@ -29,6 +36,7 @@ console.log(
 console.log(
   `--------------------------Vamos começar!----------------------------`
 );
+
 let nome = prompt(`Qual o nome do seu personagem? `);
 while (!regex.test(nome)) {
   console.log(`Por favor, digite um nome válido (Somente letras)!`);
@@ -54,10 +62,10 @@ while (sexo !== "homem" && sexo !== "mulher") {
   console.log(`Por favor ${nome}, escolha entre as duas opções disponíveis!`);
   sexo = prompt(`Qual é o seu sexo? (Homem ou mulher) `).toLowerCase();
 }
-let anoInicio = nascimento + 6;
+let idade = nascimento + 15;
 console.log();
 console.log(
-  `--------------------------- O ano é ${nascimento} ---------------------------`
+  `--------------------- Você tem ${idade} anos de idade ---------------------`
 );
 console.log();
 if (sexo == "homem" && etinia == "branca") {
@@ -95,34 +103,70 @@ e empregabilidade. Seu futuro está muito suscetível a eventos aleatórios que
 vão definir sua vida.
         `);
 }
-function status() {
+let status = {
+  esc: 0,
+  cur: 0,
+  empr: 0,
+  mudaEsc: function (esc1) {
+    this.esc = esc1;
+  },
+  mudaCur: function (cur1) {
+    this.cur = cur1;
+  },
+  mudaEmpr: function (empr1) {
+    this.empr = empr1;
+  },
+  statusfinal: function () {
+    console.log(`
+Seu status de Escolaridade é ${this.esc}/10
+Seu status de Cursos Complementares é ${this.cur}/10
+Seu status de Empregabilidade é ${this.empr}/10`);
+  },
+};
+function aleatoriedadesEstudos() {
   if (sexo == "homem" && etinia == "branca") {
-    esc = escolaridadeInicial + 8;
-    cur = cursosInicial + 8;
-    empr = empregabilidadeInicial + 8;
-    total = esc + cur + empr;
+    let random = Math.floor(Math.random(eventoAleatorioEstudos) * 10);
+    if (random == 1) {
+      console.log(`-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=
+    Sua família teve uma emergência financeira e você interrompeu 
+    os estudos para trabalhar!
+    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=`);
+    status.mudaEsc(-5);
+    status.statusfinal();
+    }
   }
   if (sexo == "homem" && etinia == "preta") {
-    esc = escolaridadeInicial + 6;
-    cur = cursosInicial + 6;
-    empr = empregabilidadeInicial + 6;
-    total = esc + cur + empr;
+    let random = Math.floor(Math.random(eventoAleatorioEstudos) * 10);
+    if (random <= 3) {
+      console.log(`-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=
+    Sua família teve uma emergência financeira e você interrompeu 
+    os estudos para trabalhar!
+    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=`);
+    status.mudaEsc(-5);
+    status.statusfinal();
+    }
   }
   if (sexo == "mulher" && etinia == "branca") {
-    esc = escolaridadeInicial + 4;
-    cur = cursosInicial + 4;
-    empr = empregabilidadeInicial + 4;
-    total = esc + cur + empr;
+    let random = Math.floor(Math.random(eventoAleatorioEstudos) * 10);
+    if (random <= 2) {
+      console.log(`-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=
+    Sua família teve uma emergência financeira e você interrompeu 
+    os estudos para trabalhar!
+    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=`);
+    status.mudaEsc(-5);
+    status.statusfinal();
+    }
   }
   if (sexo == "mulher" && etinia == "preta") {
-    esc = escolaridadeInicial + 2;
-    cur = cursosInicial + 2;
-    empr = empregabilidadeInicial + 2;
-    total = esc + cur + empr;
+    let random = Math.floor(Math.random(eventoAleatorioEstudos) * 10);
+    if (random <= 5) {
+      console.log(`-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=
+    Sua família teve uma emergência financeira e você interrompeu 
+    os estudos para trabalhar!
+    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=`);
+    status.mudaEsc(-5);
+    status.statusfinal();
+    }
   }
-  console.log(`
-Seu status de Escolaridade é ${esc}/10
-Seu status de Cursos Complementares é ${cur}/10
-Seu status de Empregabilidade é ${empr}/10`);
 }
-status();
+aleatoriedadesEstudos();
