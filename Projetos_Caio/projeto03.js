@@ -14,7 +14,7 @@ let cursoSuperior = [
   "Ciências da Computação",
   "Marketing",
 ];
-let cursoSuperior2 = 0 
+let cursoSuperior2 = 0;
 let eventoAleatorioEstudos = [
   `Sua família teve uma emergência financeira e você interrompeu os estudos para trabalhar`,
 ];
@@ -154,11 +154,11 @@ function aleatoriedadeEstudos() {
 `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 Sua família teve uma emergência financeira e você interrompeu 
 os estudos para trabalhar!
--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
-skip = prompt(`Aperte 'ENTER' para continuar...`)
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
+      );
+      skip = prompt(`Aperte 'ENTER' para continuar...`);
     } else {
       perguntasEstudo();
-
     }
   } else if (sexo == "homem" && etinia == "preta") {
     let random = Math.floor(Math.random(eventoAleatorioEstudos) * 10);
@@ -168,7 +168,7 @@ skip = prompt(`Aperte 'ENTER' para continuar...`)
 Sua família teve uma emergência financeira e você interrompeu 
 os estudos para trabalhar!
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
-skip = prompt(`Aperte 'ENTER' para continuar...`)   
+      skip = prompt(`Aperte 'ENTER' para continuar...`);
     } else {
       perguntasEstudo();
     }
@@ -180,7 +180,7 @@ skip = prompt(`Aperte 'ENTER' para continuar...`)
 Sua família teve uma emergência financeira e você interrompeu 
 os estudos para trabalhar!
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
-skip = prompt(`Aperte 'ENTER' para continuar...`)
+      skip = prompt(`Aperte 'ENTER' para continuar...`);
     } else {
       perguntasEstudo();
     }
@@ -192,14 +192,14 @@ skip = prompt(`Aperte 'ENTER' para continuar...`)
 Sua família teve uma emergência financeira e você interrompeu 
 os estudos para trabalhar!
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
-skip = prompt(`Aperte 'ENTER' para continuar...`)
+      skip = prompt(`Aperte 'ENTER' para continuar...`);
     } else {
       perguntasEstudo();
     }
   }
 }
 function faculdadealeatoria() {
-  let random2 = Math.floor(Math.random(cursoSuperior)*cursoSuperior.length);
+  let random2 = Math.floor(Math.random(cursoSuperior) * cursoSuperior.length);
   if (random2 == 0) {
     cursoSuperior2 = "Direito";
   } else if (random2 == 1) {
@@ -224,7 +224,7 @@ function aleatoriedadeCursos() {
 Você não pôde fazer um curso complementar, pois você não possuía dinheiro suficiente
 para pagar. Isso vai te prejudicar na busca por um emprego.
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
-skip = prompt(`Aperte 'ENTER' para continuar...`)
+      skip = prompt(`Aperte 'ENTER' para continuar...`);
     } else {
       perguntasCursos();
     }
@@ -236,9 +236,8 @@ skip = prompt(`Aperte 'ENTER' para continuar...`)
 Você não pôde fazer um curso complementar, pois você não possuía dinheiro suficiente
 para pagar. Isso vai te prejudicar na busca por um emprego.
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
-skip = prompt(`Aperte 'ENTER' para continuar...`)
-    }
-    else {
+      skip = prompt(`Aperte 'ENTER' para continuar...`);
+    } else {
       perguntasCursos();
     }
   } else if (sexo == "mulher" && etinia == "branca") {
@@ -249,9 +248,8 @@ skip = prompt(`Aperte 'ENTER' para continuar...`)
 Você não pôde fazer um curso complementar, pois você não possuía dinheiro suficiente
 para pagar. Isso vai te prejudicar na busca por um emprego.
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
-skip = prompt(`Aperte 'ENTER' para continuar...`)
-    }
-    else {
+      skip = prompt(`Aperte 'ENTER' para continuar...`);
+    } else {
       perguntasCursos();
     }
   } else if (sexo == "mulher" && etinia == "preta") {
@@ -262,9 +260,8 @@ skip = prompt(`Aperte 'ENTER' para continuar...`)
 Você não pôde fazer um curso complementar, pois você não possuía dinheiro suficiente
 para pagar. Isso vai te prejudicar na busca por um emprego.
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
-skip = prompt(`Aperte 'ENTER' para continuar...`)
-    }
-    else {
+      skip = prompt(`Aperte 'ENTER' para continuar...`);
+    } else {
       perguntasCursos();
     }
   }
@@ -278,8 +275,8 @@ function aleatoriedadeEmprego() {
 Você não possui muitas conexões no mercado de trabalho, o que 
 criou um empecilho para conseguir um trabalho formal.
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
-skip = prompt(`Aperte 'ENTER' para continuar...`)
-status.mudaTotal((status.esc+status.cur)-2);
+      skip = prompt(`Aperte 'ENTER' para continuar...`);
+      status.mudaTotal(status.esc + status.cur - 2);
     }
   } else if (sexo == "homem" && etinia == "preta") {
     let random = Math.floor(Math.random(eventoAleatorioEmprego) * 10);
@@ -289,8 +286,8 @@ status.mudaTotal((status.esc+status.cur)-2);
 Você não possui muitas conexões no mercado de trabalho, o que 
 criou um empecilho para conseguir um trabalho formal.
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
-skip = prompt(`Aperte 'ENTER' para continuar...`)
-status.mudaTotal((status.esc+status.cur)-2);
+      skip = prompt(`Aperte 'ENTER' para continuar...`);
+      status.mudaTotal(status.esc + status.cur - 2);
     }
   } else if (sexo == "mulher" && etinia == "branca") {
     let random = Math.floor(Math.random(eventoAleatorioEmprego) * 10);
@@ -300,8 +297,8 @@ status.mudaTotal((status.esc+status.cur)-2);
 Você não possui muitas conexões no mercado de trabalho, o que 
 criou um empecilho para conseguir um trabalho formal.
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
-skip = prompt(`Aperte 'ENTER' para continuar...`)
-status.mudaTotal((status.esc+status.cur)-2);
+      skip = prompt(`Aperte 'ENTER' para continuar...`);
+      status.mudaTotal(status.esc + status.cur - 2);
     }
   } else if (sexo == "mulher" && etinia == "preta") {
     let random = Math.floor(Math.random(eventoAleatorioEmprego) * 10);
@@ -311,20 +308,21 @@ status.mudaTotal((status.esc+status.cur)-2);
 Você não possui muitas conexões no mercado de trabalho, o que 
 criou um empecilho para conseguir um trabalho formal.
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
-skip = prompt(`Aperte 'ENTER' para continuar...`)
-status.mudaTotal((status.esc+status.cur)-2);
+      skip = prompt(`Aperte 'ENTER' para continuar...`);
+      status.mudaTotal(status.esc + status.cur - 2);
     }
   }
 }
 function perguntasEstudo() {
   console.log(
-`-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
+    `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
   );
   console.log(
-`Nenhum evento aleatório aconteceu em sua vida, que pudesse 
-atrapalhar seus estudos.`);
+    `Nenhum evento aleatório aconteceu em sua vida, que pudesse 
+atrapalhar seus estudos.`
+  );
   console.log(
-`-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
+    `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
   );
   ensinoMedio = prompt(`Você terminou o Ensino Médio? `).toLowerCase();
   while (ensinoMedio !== "sim" && ensinoMedio !== "nao") {
@@ -332,7 +330,7 @@ atrapalhar seus estudos.`);
     ensinoMedio = prompt(`Você terminou o Ensino Médio? `).toLowerCase();
   }
   console.log(
-`-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
+    `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
   );
   if (ensinoMedio == "nao") {
     console.log(`Você não concluiu a formação básica. Por conta disso, 
@@ -340,7 +338,7 @@ você provavelmente vai se limitar a empregos com baixas remunerações
 e instáveis. Também não há possibilidade de ingressar 
 em um curso superior.`);
     console.log(
-`-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
+      `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
     );
   }
   if (ensinoMedio == "sim") {
@@ -348,7 +346,7 @@ em um curso superior.`);
 você está apto a se candidatar a algumas vagas de emprego formal,
 mas a grande parte das oportunidades são temporárias ou informais`);
     console.log(
-`-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
+      `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
     );
     status.mudaEsc(status.esc + 3);
   }
@@ -361,77 +359,77 @@ mas a grande parte das oportunidades são temporárias ou informais`);
     faculdadealeatoria();
     status.mudaEsc(status.esc + 7);
     console.log();
-    skip = prompt(`Aperte 'ENTER' para continuar...`)
+    skip = prompt(`Aperte 'ENTER' para continuar...`);
     console.log();
   } else if (faculdade == "nao") {
     console.log(`Você resolveu não fazer faculdade. Suas oportunidades
 de emprego, continuam as mesmas da escolha anterior.`);
   }
   console.log(
-`-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
+    `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
   );
 }
 function perguntasCursos() {
   console.log(
-`-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
+    `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
   );
   console.log(`Desde quando você terminou os estudos, nada aconteceu para
 te impedir de fazer um curso complementar.`);
-skip = prompt(`Aperte 'ENTER' para continuar...`)
+  skip = prompt(`Aperte 'ENTER' para continuar...`);
   console.log(
-`-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
+    `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
   );
-  cursocompl = prompt(`Você deseja fazer algum curso complementar? `).toLowerCase();
-    while (cursocompl !== 'sim' && cursocompl !== 'nao') {
-      console.log(`Escolha entre Sim ou Não.`); 
-      cursocompl = prompt(`Você deseja fazer algum curso complementar? `).toLowerCase();
-    }
-    if (cursocompl == 'nao') {
-      console.log(`Você decidiu não fazer nenhum curso. Isso vai te
+  cursocompl = prompt(
+    `Você deseja fazer algum curso complementar? `
+  ).toLowerCase();
+  while (cursocompl !== "sim" && cursocompl !== "nao") {
+    console.log(`Escolha entre Sim ou Não.`);
+    cursocompl = prompt(
+      `Você deseja fazer algum curso complementar? `
+    ).toLowerCase();
+  }
+  if (cursocompl == "nao") {
+    console.log(`Você decidiu não fazer nenhum curso. Isso vai te
 prejudicar na busca por uma posição no mercado de trabalho. Mas você ainda
-pode conseguir boas oportunidades.`)
-    }
-    if (cursocompl == 'sim') {
-      console.log(
-`-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`)
-      console.log(`
+pode conseguir boas oportunidades.`);
+  }
+  if (cursocompl == "sim") {
+    console.log(
+      `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
+    );
+    console.log(`
 Qual curso você deseja fazer?
       
 [1] - Inglês
 [2] - Espanhol
 [3] - Tirar CNH
-      `)
+      `);
+    cursos = +prompt(`
+Escolha entre as três opções: `);
+    console.log(
+      `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
+    );
+    while (!regex3.test(cursos)) {
       cursos = +prompt(`
-Escolha entre as três opções: `)
-console.log(
-  `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
-)
-      while(!regex3.test(cursos)){
-        cursos = +prompt(`
-Digite o número correspondente a opção desejada: `)
-      }
-      if (cursos == 1){
-        status.mudaCur(status.cur + 10);
-        console.log(`
-Você fez um curso de inglês! Dentre as opções, 
-essa é a que mais agrega à sua educação.`)
-      }
-      else if (cursos == 2){
-        status.mudaCur(status.cur + 7);
-        console.log(`
-Você fez um curso de espanhol! Não é a opção que mais 
-agrega à sua educação, mas abre diversas portas!`)
-      }
-      else if (cursos == 3){
-        status.mudaCur(status.cur + 3);
-        console.log(`
-Você fez o processo para tirar sua CNH. Esse curso não
-agrega a sua capacitação, mas te proporciona algumas opções.`)
-      }
-
+Digite o número correspondente a opção desejada: `);
     }
+    if (cursos == 1) {
+      status.mudaCur(status.cur + 10);
+      console.log(`
+Você fez um curso de inglês! Dentre as opções, 
+essa é a que mais agrega à sua educação.`);
+    } else if (cursos == 2) {
+      status.mudaCur(status.cur + 7);
+      console.log(`
+Você fez um curso de espanhol! Não é a opção que mais 
+agrega à sua educação, mas abre diversas portas!`);
+    } else if (cursos == 3) {
+      status.mudaCur(status.cur + 3);
+      console.log(`
+Você fez o processo para tirar sua CNH. Esse curso não
+agrega a sua capacitação, mas te proporciona algumas opções.`);
+    }
+  }
 }
-function emprego () {
-
-}
+function emprego() {}
 status.statusfinal();
