@@ -25,6 +25,7 @@ let eventoAleatorioEmprego = [
   `Você não possui muitas conexões no mercado de trabalho, o que criou um empecilho
 para conseguir um trabalho formal.`,
 ];
+let emprego = 0;
 let status = {
   esc: 0,
   cur: 0,
@@ -54,6 +55,8 @@ algumas situações que pessoas de diferentes etinias e sexos têm ao longo
 de sua vida! A ideia não é ter um vencedor ou perdedor ao final, 
 e sim ilustrar como condições sociais, que estão além de nossas 
 escolhas, podem influenciar em nossa carreira escolar e profissional.`);
+console.log();
+skip = prompt(`Aperte 'ENTER' para continuar...`);
 console.log(
   `--------------------------------------------------------------------`
 );
@@ -83,11 +86,41 @@ while (sexo !== "homem" && sexo !== "mulher") {
   console.log(`Por favor ${nome}, escolha entre as duas opções disponíveis!`);
   sexo = prompt(`Qual é o seu sexo? (Homem ou mulher) `).toLowerCase();
 }
+
 let idade = 2022 - nascimento;
+let personagem = {
+  nomePersonagem: nome,
+  idadePersonagem: idade,
+  etniaPersonagem: etinia,
+  sexoPersonagem: sexo,
+
+    caracteristicas: function () {
+      console.log (
+      `Seu nome é ${this.nomePersonagem}
+Sua idade é ${this.idadePersonagem} anos
+Sua pele é ${this.etniaPersonagem}
+Você é ${this.sexoPersonagem}`)
+status.statusfinal();
+    },
+};
+function consultar () {
+  let consult = prompt(`Você deseja consultar as suas características e status? `).toLowerCase();
+  while(consult !== 'sim' && consult !== 'nao'){
+    console.log('Responda com Sim ou Não.')
+    consult = prompt(`Você deseja consultar as suas características e status? `).toLowerCase();
+  }
+  if(consult == 'sim'){ 
+    personagem.caracteristicas();
+    kip = prompt(`Tecle ENTER para continuar... `)
+  }
+  else if(consult == 'nao') {
+    skip = prompt(`Tecle ENTER para continuar... `)
+  } 
+}
 console.log();
 console.clear();
 console.log(
-  `--------------------- Você tem ${idade} anos de idade ---------------------`
+  `--------------------- Você tem ${personagem.idadePersonagem} anos de idade ---------------------`
 );
 console.log();
 if (sexo == "homem" && etinia == "branca") {
@@ -97,12 +130,20 @@ Por conta disso, praticamente todas as escolhas estão sob seu controle.
 E eventos aleatórios que te prejudiquem, são extremamente raros! 
 Seu futuro só depende de você!
         `);
+
+        skip = prompt(`Aperte 'ENTER' para continuar...`);
   console.log(
 `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=`
   );
   aleatoriedadeEstudos();
   console.clear();
+  consultar();
+  console.clear();
   aleatoriedadeCursos();
+  console.clear();
+  consultar();
+  console.clear();
+  aleatoriedadeEmprego();
 } else if (sexo == "homem" && etinia == "preta") {
   console.log(`
 Sendo um homem preto, por conta do racismo,
@@ -112,12 +153,19 @@ mas algumas coisas estão além do seu controle!
 Você está bastante suscetível a eventos aleatórios que vão
 impactar diretamente na sua vida.
         `);
+        skip = prompt(`Aperte 'ENTER' para continuar...`);
   console.log(
 `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=`
   );
   aleatoriedadeEstudos();
   console.clear();
+  consultar();
+  console.clear();
   aleatoriedadeCursos();
+  console.clear();
+  consultar();
+  console.clear();
+  aleatoriedadeEmprego();
 } else if (sexo == "mulher" && etinia == "branca") {
   console.log(`
 Como mulher, você não foi muito incentivada a investir em sua carreira.
@@ -125,26 +173,40 @@ Mas, por ser uma pessoa branca, você ainda possui grande automonia.
 A maior parte de suas escolhas serão feitas por você e eventos aleatórios 
 impactantes são comuns.
         `);
+        skip = prompt(`Aperte 'ENTER' para continuar...`);
   console.log(
 `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
   );
   aleatoriedadeEstudos();
   console.clear();
+  consultar();
+  console.clear();
   aleatoriedadeCursos();
+  console.clear();
+  consultar();
+  console.clear();
+  aleatoriedadeEmprego();
 } else if (sexo == "mulher" && etinia == "preta") {
   console.log(`
 Sendo uma mulher preta, você enfrentou diversos tipos de discriminação.
-Ao longo de sua tragetória, foi forçada a acreditar que era menos capaz e 
+Ao longo de sua trajetória, foi forçada a acreditar que era menos capaz e 
 possui uma diminuição muito significativa das oportunidades de escolarização
 e empregabilidade. Seu futuro está muito suscetível a eventos aleatórios que 
 vão definir sua vida.
         `);
+        skip = prompt(`Aperte 'ENTER' para continuar...`);
   console.log(
 `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
   );
   aleatoriedadeEstudos();
   console.clear();
+  consultar();
+  console.clear();
   aleatoriedadeCursos();
+  console.clear();
+  consultar();
+  console.clear();
+  aleatoriedadeEmprego();
 }
 function aleatoriedadeEstudos() {
   if (sexo == "homem" && etinia == "branca") {
@@ -276,7 +338,10 @@ Você não possui muitas conexões no mercado de trabalho, o que
 criou um empecilho para conseguir um trabalho formal.
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
       skip = prompt(`Aperte 'ENTER' para continuar...`);
-      status.mudaTotal(status.esc + status.cur - 2);
+      status.mudaTotal((status.esc + status.cur) - status.mudaTotal);;
+    }
+    else {
+      perguntasEmprego();
     }
   } else if (sexo == "homem" && etinia == "preta") {
     let random = Math.floor(Math.random(eventoAleatorioEmprego) * 10);
@@ -287,7 +352,10 @@ Você não possui muitas conexões no mercado de trabalho, o que
 criou um empecilho para conseguir um trabalho formal.
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
       skip = prompt(`Aperte 'ENTER' para continuar...`);
-      status.mudaTotal(status.esc + status.cur - 2);
+      status.mudaTotal((status.esc + status.cur) - status.mudaTotal);
+    }
+    else {
+      perguntasEmprego();
     }
   } else if (sexo == "mulher" && etinia == "branca") {
     let random = Math.floor(Math.random(eventoAleatorioEmprego) * 10);
@@ -298,7 +366,10 @@ Você não possui muitas conexões no mercado de trabalho, o que
 criou um empecilho para conseguir um trabalho formal.
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
       skip = prompt(`Aperte 'ENTER' para continuar...`);
-      status.mudaTotal(status.esc + status.cur - 2);
+      status.mudaTotal((status.esc + status.cur) - status.mudaTotal);;
+    }
+    else {
+      perguntasEmprego();
     }
   } else if (sexo == "mulher" && etinia == "preta") {
     let random = Math.floor(Math.random(eventoAleatorioEmprego) * 10);
@@ -309,7 +380,10 @@ Você não possui muitas conexões no mercado de trabalho, o que
 criou um empecilho para conseguir um trabalho formal.
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`);
       skip = prompt(`Aperte 'ENTER' para continuar...`);
-      status.mudaTotal(status.esc + status.cur - 2);
+      status.mudaTotal((status.esc + status.cur) - status.mudaTotal);;
+    }
+    else {
+      perguntasEmprego();
     }
   }
 }
@@ -431,5 +505,111 @@ agrega a sua capacitação, mas te proporciona algumas opções.`);
     }
   }
 }
-function emprego() {}
-status.statusfinal();
+function perguntasEmprego() {
+  console.log(
+    `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
+  );
+  console.log(
+`Nada aconteceu em sua vida que te pudesse te condicionar à um emprego informal. 
+Você possui chances de conseguir um emprego estável e bem remunerado, de acordo com 
+os seus status de Escolaridade e Cursos Complementares`
+  );
+  skip = prompt(`Aperte 'ENTER' para continuar...`);
+  console.log(
+    `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
+  );
+  if(status.total >= 15){
+    console.log(`Parabéns! Você concluiu seus estudos com máximo
+êxito! Devido a sua qualificação e seus contatos no mercado
+você recebeu três ótimas propostas de emprego:
+[1] - Emprego público na sua área de formação (${faculdadealeatoria.cursoSuperior2})
+[2] - Gerência de banco
+[3] - Representante de uma multinacional`);
+  emprego = +prompt(`
+Selecione a opção desejada: `)
+    while (!regex3.test(emprego)){
+      emprego = +prompt (`Digite o número correspondente à opção desejada: `);
+    }
+    if (emprego == 1){
+      console.log(`Pouco depois de se formar, você já começou a atuar em sua área
+com sua qualificação, sua posição já lhe proporciona uma grande remuneração e
+muita estabilidade! Você se aposentou sem nunca ter ficado desempregado e
+levou uma vida confortável!`);
+    }
+    else if (emprego == 2) {
+      console.log(`Com um cargo importante em uma grande agência bancária de 
+sua cidade, você usufruiu de uma vida repleta de oportunidades e conforto. 
+Se aposentou cedo e pôde curtir seu tempo livre com a família.`);
+    }
+    else if (emprego == 3){
+      console.log(`Sendo um representante comercial desta grande empresa,
+você conheceu muita gente em posições privilegiadas e que te proporcionaram
+diversas oportunidades ao longo de sua vida. Você teve uma vida sem 
+problemas financeiros e pôde proporcionar conforto para sua família`);
+    }
+  }
+  else if(status.total == 10 || status.total <= 14){
+    console.log(`Você teve alguns problemas em sua, que te impediram de concluir
+    sua capacitação profissional com máximo êxito. Por conta disso, você recebeu 
+    três oportunidades medianas de emprego, que te proporcionam uma renda suficiente
+    para viver sem maiores dificuldades, porém com pouca estabilidade:
+[1] - Gerente de supermercado
+[2] - Supervisor de vendas
+[3] - Assistente de Departamento Pessoal`);
+  emprego = +prompt(`
+Selecione a opção desejada: `)
+    while (!regex3.test(emprego)){
+      emprego = +prompt (`Digite o número correspondente à opção desejada: `);
+    }
+    if (emprego == 1){
+      console.log(`Você conseguiu um cargo de chefia em uma unidade de uma rede
+      de supermercados. O emprego paga um salário suficiente para sustentar você
+      e seu cônjuge. Ao longo da sua vida, você passou por diversas lojas diferentes
+      e se aposentou tardimente, devido a períodos em que ficou desempregado(a).`);
+    }
+    else if (emprego == 2) {
+      console.log(`Você supervisiona vendedores em uma loja de departamentos, um cargo
+      que te proporciona certa autonomia, porém com um salário mediano. Você se aposentou
+      mais tarde do que gostaria, devido a períodos em que ficou desempregado(a).`);
+    }
+    else if (emprego == 3){
+      console.log(`Sendo um assistente de Departamento Pessoal de uma empresa média, você
+      sempre se frustrou com um salário medíocre e nunca obteve uma promoção por não
+      ter uma formação na área. Você se aposentou tardiamente, devido a períodos em 
+      que ficou desempregado(a).`);
+    }
+  }
+  else if (status.total < 10) {
+    console.log(`Você teve uma vida difícil e não consegiu se qualificar para empregos
+    formais e com rendas satisfatórias. Devido à isso, teve que recorrer à empregos temporários
+    ou informais. Decida qual deles deseja seguir
+[1] - Entregador de aplicativo
+[2] - Operador de telemarketing
+[3] - Atendente de lanchonete`);
+  emprego = +prompt(`
+Selecione a opção desejada: `)
+    while (!regex3.test(emprego)){
+      emprego = +prompt (`Digite o número correspondente à opção desejada: `);
+    }
+    if (emprego == 1){
+      console.log(`Você passou grande parte da sua vida entregando comida 
+      de bicicleta. Obeteve uma renda suficiente para sobreviver, porém nunca usufruiu de 
+      nenhum luxo. Devido a informalidade, você se aposentou já idoso, com um salário 
+      menor do que o necessário para bancar as despesas médicas, o que te deixou endividado
+      até o fim da vida.`);
+    }
+    else if (emprego == 2) {
+      console.log(`Você passou sua vida toda escutando reclamações e queixas de clientes
+      insatisfeitos com a sua empresa. Devido ao alto estresse, você teve problemas de saúde mental
+      e se aposentou com idade avançada. Podendo usufruir muito pouco de seu tempo livre e experenciando
+      grandes problemas fincanceiros.`);
+    }
+    else if (emprego == 3){
+      console.log(`Atendendo pessoas em uma lanchonete durante grande parte de sua vida, você
+      experimentou longos períodos desempregado(a) e uma rotina muito estressante. Se aposentou
+      idoso(a) e nunca pôde passar muito tempo com as pessoas que ama.`);
+    }
+  }
+
+}
+
