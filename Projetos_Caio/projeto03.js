@@ -1,4 +1,6 @@
 const prompt = require("prompt-sync")();
+var repetir = "sim";
+while (repetir == "sim"){
 console.clear();
 var regex3 = /[1-3]/;
 var regex2 = /[1-9]/;
@@ -74,8 +76,6 @@ while (!regex2.test(nascimento) || nascimento < 1980 || nascimento > 2000) {
 digite uma data entre 1980 e 2000)`);
   nascimento = +prompt(`${nome}, em que ano você nasceu? `);
 }
-var anoAtual = nascimento;
-var idade = anoAtual - nascimento;
 let etinia = prompt(`A cor de sua pele é preta ou branca? `).toLowerCase();
 while (etinia !== "branca" && etinia !== "preta") {
   console.log(`Por favor ${nome}, escolha entre as duas opções disponíveis!`);
@@ -91,14 +91,27 @@ while (sexo !== "homem" && sexo !== "mulher") {
 let personagem = {
   nomePersonagem: nome,
   etniaPersonagem: etinia,
+  idadePersonagem: 0,
   sexoPersonagem: sexo,
+  anoAtual: 0,
   caracteristicas: function () {
     console.log(
-      `Seu nome é ${this.nomePersonagem},
+`Seu nome é ${this.nomePersonagem},
 Sua pele é ${this.etniaPersonagem},
-Você é ${this.sexoPersonagem}.`
+Sua idade é ${this.idadePersonagem} anos,
+Você é ${this.sexoPersonagem},
+O ano é ${this.anoAtual}.`
     );
     status.statusfinal();
+  },
+  mudaIdade: function(mudaIdade1){
+    this.idadePersonagem = mudaIdade1
+  },
+  mostraIdade: function(){
+    console.log(`Você possui ${this.idadePersonagem} anos de idade,`)
+  },
+  mudaAno: function(mudaAno1){
+    this.anoAtual = mudaAno1
   },
 };
 skip = prompt(`Tecle ENTER para continuar... `);
@@ -119,9 +132,7 @@ function consultar() {
     skip = prompt(`Tecle ENTER para continuar... `);
   }
 }
-console.log();
 console.clear();
-console.log();
 if (sexo == "homem" && etinia == "branca") {
   console.log(`
 Sendo um homem branco, você sempre teve maiores incentivos e oportunidades.
@@ -208,11 +219,9 @@ vão definir sua vida.
   aleatoriedadeEmprego();
 }
 function aleatoriedadeEstudos() {
-  var anoAtual = nascimento + 15;
-  var idade = anoAtual - nascimento;
-  console.log(
-    `Você tem ${idade} anos de idade e acabou de terminar o ensino fundamental `
-  );
+  personagem.mudaIdade(personagem.idadePersonagem+15);
+  personagem.mudaAno(personagem.idadePersonagem+nascimento);
+  personagem.mostraIdade(); console.log(`e acabou de terminar o ensino fundamental!`)
   if (sexo == "homem" && etinia == "branca") {
     let random = Math.floor(Math.random(eventoAleatorioEstudos) * 10);
     if (random == 1) {
@@ -427,11 +436,9 @@ mas a grande parte das oportunidades são temporárias ou informais`);
       `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
     );
     status.mudaEsc(status.esc + 3);
-    var anoAtual = nascimento + 18;
-    var idade = anoAtual - nascimento;
-    console.log(
-      `Você tem ${idade} anos de idade e acabou de terminar o Ensino Médio!`
-    );
+    personagem.mudaIdade(personagem.idadePersonagem+3);
+    personagem.mudaAno(personagem.idadePersonagem+nascimento);
+personagem.mostraIdade(); console.log(`e acabou de terminar o ensino médio!`)
     faculdade = prompt(`Você se formou em uma faculdade? `).toLowerCase();
     while (faculdade !== "sim" && faculdade !== "nao") {
       console.log(`Responda com Sim ou Não.`);
@@ -460,11 +467,9 @@ function perguntasCursos() {
   );
   console.log(`Desde quando você terminou os estudos, nada aconteceu para
 te impedir de fazer um curso complementar.`);
-  var anoAtual = nascimento + 25;
-  var idade = anoAtual - nascimento;
-  console.log(
-    `Você tem ${idade} anos de idade e está pensando em se capacitar mais!`
-  );
+personagem.mudaIdade(personagem.idadePersonagem+5);
+personagem.mudaAno(personagem.idadePersonagem+nascimento);
+personagem.mostraIdade(); console.log(`e está pensando em se capacitar mais!`)
   skip = prompt(`Aperte 'ENTER' para continuar...`);
   console.log(
     `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
@@ -533,10 +538,9 @@ function perguntasEmprego() {
 Você possui chances de conseguir um emprego estável e bem remunerado, de acordo com 
 os seus status de Escolaridade e Cursos Complementares`
   );
-  var anoAtual = nascimento + 27;
-  var idade = anoAtual - nascimento;
-  console.log(`Você tem ${idade} anos de idade e está pronto para entrar 
-  no mercado de trabalho!`);
+  personagem.mudaIdade(personagem.idadePersonagem+5);
+  personagem.mudaAno(personagem.idadePersonagem+nascimento);
+personagem.mostraIdade(); console.log(`e pronto para entrar no mercado de trabalho!`)
   skip = prompt(`Aperte 'ENTER' para continuar...`);
   console.log(
     `-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=`
@@ -627,13 +631,12 @@ idoso(a) e nunca pôde passar muito tempo com as pessoas que ama.`);
   }
 }
 function empregoinformal() {
-  var anoAtual = nascimento + 25;
-  var idade = anoAtual - nascimento;
-  console.log(`Você tem ${idade} anos de idade e está pronto para encarar
-  o mercado de trabalho!`);
+  personagem.mudaIdade(personagem.idadePersonagem+5);
+  personagem.mudaAno(personagem.idadePersonagem+nascimento);
+  personagem.mostraIdade(); console.log(`e pronto para entrar no mercado de trabalho!`)
   console.log(`Você não possuía o network necessário para ingressar em um emprego
-  com remuração justa e estabilidade. Por conta disso, você recebeu três propostas 
-  de subemprego: 
+com remuração justa e estabilidade. Por conta disso, você recebeu três propostas 
+de subemprego: 
 [1] - Entregador de aplicativo
 [2] - Operador de telemarketing
 [3] - Atendente de lanchonete`);
@@ -659,3 +662,18 @@ experimentou longos períodos desempregado(a) e uma rotina muito estressante. Se
 idoso(a) e nunca pôde passar muito tempo com as pessoas que ama.`);
   }
 }
+console.clear(),
+repetir = prompt(`${nome}, deseja jogar novamente? `).toLowerCase();
+console.log();
+while (repetir !== "sim" && repetir !== "nao") {
+  console.log(`Responda com 'Sim' ou 'Não'`);
+  repetir = prompt(`Deseja jogar novamente? `).toLowerCase();
+}
+if (repetir == "nao") {
+  console.log(`
+          | Obrigado por jogar, ${nome}! |
+`)
+}
+}
+/*A ideia é que seja incluída no jogo diversas possibilidades de escolhas e
+características que impactem na trajetória.*/
